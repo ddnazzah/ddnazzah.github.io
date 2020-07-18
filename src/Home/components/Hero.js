@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:21:08
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 01:40:58
+ * @Last Modified time: 2020-07-18 05:15:01
  */
 import React from 'react';
 import me_2 from '../../_shared/assets/images/me_2.png';

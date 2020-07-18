@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 04:26:48
+ * @Last Modified time: 2020-07-18 05:15:06
  */
 
 import AnimatedNumber from 'animated-number-react';
