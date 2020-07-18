@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-07 04:02:32
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-19 06:12:26
+ * @Last Modified time: 2020-07-18 03:54:19
  */
 
 import React, { useState } from 'react';
@@ -34,7 +34,7 @@ const Home = () => {
 
 			<Hero />
 
-			<About number_of_project={10} />
+			<About number_of_project={parseInt(projects?.length + other_projects?.length + 1)} />
 
 			<Resume data={resume} />
 
