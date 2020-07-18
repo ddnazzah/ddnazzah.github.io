@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 04:16:34
+ * @Last Modified time: 2020-07-18 04:26:48
  */
 
 import AnimatedNumber from 'animated-number-react';
@@ -45,15 +45,32 @@ const About = ({ number_of_project }) => {
 								</p>
 								<p>
 									I graduated from{' '}
-									<a href='https://www.knust.edu.gh/'> Kwame Nkrumah University of Science and Technology</a>{' '}
+									<a href='https://www.knust.edu.gh/' target='_blank' rel='noopener noreferrer'>
+										{' '}
+										Kwame Nkrumah University of Science and Technology
+									</a>{' '}
 									with a bachelor's in Computer Engineering and for the past 4+ years, I have been a team player
 									and team leader providing solutions with the <a href='#projects-section'>stuffs I build</a>.
 								</p>
 								<p>
 									Through continuous professionalism as a student, I am eager to build on my academic foundation
-									in <a href='https://en.wikipedia.org/wiki/Artificial_intelligence'>artificial intelligence</a>{' '}
-									and <a href='https://en.wikipedia.org/wiki/Machine_learning'>machine learning</a> with the aim
-									of contributing solutions to some of the world's problems.
+									in{' '}
+									<a
+										href='https://en.wikipedia.org/wiki/Artificial_intelligence'
+										target='_blank'
+										rel='noopener noreferrer'
+									>
+										artificial intelligence
+									</a>{' '}
+									and{' '}
+									<a
+										href='https://en.wikipedia.org/wiki/Machine_learning'
+										target='_blank'
+										rel='noopener noreferrer'
+									>
+										machine learning
+									</a>{' '}
+									with the aim of contributing solutions to some of the world's problems.
 								</p>
 								<ul className='about-info mt-4 px-md-0 px-2'>
 									<li className='d-flex'>
