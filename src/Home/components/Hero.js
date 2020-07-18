@@ -3,7 +3,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:21:08
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 16:11:18
+ * @Last Modified time: 2020-07-18 16:47:16
  */
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
@@ -102,9 +102,11 @@ const introDescOptions = {
 	strings: ['I develop things for the world.', 'Check out my portfolio'],
 	typeSpeed: 60,
 	loop: true,
+	cursorChar: '✏️',
 };
 
 const introOptions = {
-	strings: ["I'm <span>Dieu-Donne Nazzah.</span>"],
+	strings: ["I'm <span>Dieu-Donne Nazzah</span>"],
 	typeSpeed: 60,
+	cursorChar: '.',
 };
