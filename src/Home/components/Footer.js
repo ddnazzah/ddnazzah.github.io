@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:27:48
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-12 13:45:37
+ * @Last Modified time: 2020-07-18 03:47:26
  */
 
 import React from 'react';
@@ -14,16 +14,16 @@ const Footer = () => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-md-12 text-center'>
-							<div className='ddnazzah-footer-social2 d-none d-md-block d-lg-none'>
+							<div className='ddnazzah-footer-social2 d-lg-none'>
 								<ul>
 									<li>
 										<a
-											href='https://github.com/bchiang7'
+											href='https://gitlab.com/users/ddnazzah'
 											target='_blank'
 											rel='nofollow noopener noreferrer'
-											aria-label='GitHub'
+											aria-label='GitLab'
 										>
-											<span className='icon-github'></span>
+											<span className='icon-gitlab'></span>
 										</a>
 									</li>
 									<li>
@@ -74,9 +74,9 @@ const Footer = () => {
 							href='https://gitlab.com/users/ddnazzah'
 							target='_blank'
 							rel='nofollow noopener noreferrer'
-							aria-label='GitHub'
+							aria-label='GitLab'
 						>
-							<span className='icon-github'></span>
+							<span className='icon-gitlab'></span>
 						</a>
 					</li>
 					<li>
