@@ -3,7 +3,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:21:08
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 16:47:16
+ * @Last Modified time: 2020-07-18 16:50:16
  */
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
@@ -102,7 +102,7 @@ const introDescOptions = {
 	strings: ['I develop things for the world.', 'Check out my portfolio'],
 	typeSpeed: 60,
 	loop: true,
-	cursorChar: '✏️',
+	cursorChar: '🖊️',
 };
 
 const introOptions = {
