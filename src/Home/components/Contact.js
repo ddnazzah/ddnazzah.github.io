@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:25:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-15 05:29:41
+ * @Last Modified time: 2020-07-12 21:58:08
  */
 
 import React, { useEffect, useState } from 'react';
@@ -10,6 +10,7 @@ import { useFirestore } from 'react-redux-firebase';
 import { useToasts } from 'react-toast-notifications';
 import validate from 'validate.js';
 import about from '../../_shared/assets/images/about.jpg';
+import { Loader } from '../../_shared/components';
 import { ContactSchema } from '../_services';
 
 const Contact = () => {
@@ -125,7 +126,7 @@ const Contact = () => {
 							</div>
 							<h3 className='mb-4'>Website</h3>
 							<p>
-								<a href='#'>yoursite.com</a>
+								<a href='https://dieudonnenazzah.com'>dieudonnenazzah.com</a>
 							</p>
 						</div>
 					</div>
@@ -189,12 +190,18 @@ const Contact = () => {
 								<div className='invalid-feedback'>{hasError('message') ? formState.errors.message[0] : null}</div>
 							</div>
 							<div className='form-group'>
-								<input
-									type='submit'
-									value='Send Message'
-									className='btn btn-primary py-3 px-5'
-									disabled={loading || !formState.isValid}
-								/>
+								{loading ? (
+									<div className='py-3 px-5'>
+										<Loader loading={loading} size={12} hCenter />
+									</div>
+								) : (
+									<input
+										type='submit'
+										value='Send Message'
+										className='btn btn-primary py-4 px-5'
+										disabled={loading || !formState.isValid}
+									/>
+								)}
 							</div>
 						</form>
 					</div>

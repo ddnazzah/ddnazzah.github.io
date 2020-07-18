@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:12:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-10 06:27:36
+ * @Last Modified time: 2020-07-12 12:52:58
  */
 import React from 'react';
 import logo from '../assets/images/ddnazzah.logo.png';
@@ -10,14 +10,14 @@ import logo from '../assets/images/ddnazzah.logo.png';
 const Header = () => {
 	return (
 		<nav
-			className='navbar navbar-expand-lg navbar-dark ddnazzah_navbar ddnazzah-navbar-light site-navbar-target'
+			className='navbar navbar-expand-lg navbar-dark giphitie_navbar ddnazzah-navbar-light site-navbar-target'
 			id='ddnazzah-navbar'
 			data-aos='fade-in'
 			data-aos-delay='500'
 		>
 			<div className='container'>
 				<a className='navbar-brand' href='index.html'>
-					<img src={logo} width='auto' height='25' alt='' />
+					<img src={logo} width='auto' height='35' alt='' />
 				</a>
 				<button
 					className='navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle'

@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:27:48
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-10 06:27:05
+ * @Last Modified time: 2020-07-12 13:45:37
  */
 
 import React from 'react';
@@ -71,7 +71,7 @@ const Footer = () => {
 				<ul>
 					<li>
 						<a
-							href='https://github.com/bchiang7'
+							href='https://gitlab.com/users/ddnazzah'
 							target='_blank'
 							rel='nofollow noopener noreferrer'
 							aria-label='GitHub'

@@ -1,0 +1,40 @@
+image: node:12.13.0-alpine
+
+before_script:
+    - npm i -g firebase-tools
+
+deploy-firestore:
+    stage: deploy
+    script:
+        - firebase deploy --only firestore --token $FIREBASE_TOKEN
+    only:
+        refs:
+            - master
+        changes:
+            - firebase-config/firestore.rules
+            - firebase-config/firestore.indexes.json
+
+deploy-functions:
+    stage: deploy
+    script:
+        - cd functions
+        - npm install
+        - cd ..
+        - firebase deploy --only functions --token $FIREBASE_TOKEN
+    only:
+        refs:
+            - master
+        changes:
+            - functions/**/*
+
+prod-hosting:
+    stage: deploy
+    script:
+        - yarn
+        - yarn build
+        - firebase deploy --only hosting --token $FIREBASE_TOKEN
+    only:
+        - master
+    environment:
+        name: production
+        url: https://dieudonnenazzah.com

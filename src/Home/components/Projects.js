@@ -2,11 +2,13 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:33:51
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-15 05:31:27
+ * @Last Modified time: 2020-07-18 02:09:03
  */
 import React from 'react';
 
 const Projects = ({ data, otherData }) => {
+	const gridSizes = [4, 8, 8, 4];
+
 	return (
 		<React.Fragment>
 			<section className='ddnazzah-section ddnazzah-project' id='projects-section'>
@@ -20,7 +22,7 @@ const Projects = ({ data, otherData }) => {
 					</div>
 					<div className='row'>
 						{data.map((project, index) => (
-							<div className={index % 2 === 0 ? 'col-md-4' : 'col-md-8'} key={project.id}>
+							<div className={gridSizes[index % 4] === 4 ? 'col-md-4' : 'col-md-8'} key={project.id}>
 								<div
 									className='project img  d-flex justify-content-center align-items-center'
 									style={{ backgroundImage: `url(${project.image})` }}
@@ -60,6 +62,17 @@ const Projects = ({ data, otherData }) => {
 									<div className='desc'>
 										<h3 className='mb-5'>{project.name}</h3>
 										<p className='text-left'>{project.description}</p>
+										{project.link ? (
+											<a href={project.link} target='_blank' rel='noopener noreferrer'>
+												<span className='icon float-right'>
+													<i className='icon-open_in_new' style={{ fontSize: '1rem' }}></i>
+												</span>
+											</a>
+										) : (
+											<span className='icon float-right text-lowercase'>
+												<i style={{ fontSize: '1rem' }}>private</i>
+											</span>
+										)}
 									</div>
 								</div>
 							</div>

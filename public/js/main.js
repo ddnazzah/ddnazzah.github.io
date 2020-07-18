@@ -37,7 +37,7 @@ AOS.init({
 	burgerMenu();
 
 	var onPageClick = function () {
-		$(document).on('click', '#ddnazzah-nav a[href^="#"]', function (event) {
+		$(document).on('click', '#ddnazzah-nav a[href^="#"], a[href^="#"]', function (event) {
 			event.preventDefault();
 
 			var href = $.attr(this, 'href');
@@ -109,7 +109,7 @@ AOS.init({
 		$(window).scroll(function () {
 			var $w = $(this),
 				st = $w.scrollTop(),
-				navbar = $('.ddnazzah_navbar'),
+				navbar = $('.giphitie_navbar'),
 				sd = $('.js-scroll-wrap');
 
 			if (st > 150) {
@@ -143,31 +143,4 @@ AOS.init({
 		});
 	};
 	scrollWindow();
-
-	var counter = function () {
-		window.$('.ddnazzah-about').waypoint(
-			function (direction) {
-				console.log(direction, this.element);
-
-				if (direction === 'down' && !$(this.element).hasClass('ddnazzah-animated')) {
-					var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',');
-					$('.number').each(function () {
-						var $this = $(this),
-							num = $this.data('number');
-						console.log(num);
-						$this.animateNumber(
-							{
-								number: num,
-								numberStep: comma_separator_number_step,
-							},
-							7000,
-						);
-					});
-				}
-			},
-			{ offset: '95%' },
-		);
-	};
-
-	counter();
 })(jQuery);

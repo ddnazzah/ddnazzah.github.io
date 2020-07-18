@@ -1,8 +1,8 @@
 /*
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:26:19
- * @Last Modified by:   Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-08 18:26:19
+ * @Last Modified by: Dieu-Donne Nazzah
+ * @Last Modified time: 2020-07-18 02:12:59
  */
 
 import React from 'react';
@@ -25,7 +25,7 @@ const Services = () => {
 								<i className='flaticon-domain'></i>
 							</span>
 							<div className='desc'>
-								<h3 className='mb-5'>Web Development</h3>
+								<h3>Web Development</h3>
 							</div>
 						</div>
 					</div>
@@ -35,7 +35,7 @@ const Services = () => {
 								<i className='flaticon-coding'></i>
 							</span>
 							<div className='desc'>
-								<h3 className='mb-5'>Mobile App Development</h3>
+								<h3>Mobile App Development</h3>
 							</div>
 						</div>
 					</div>
@@ -45,7 +45,7 @@ const Services = () => {
 								<i className='flaticon-seo'></i>
 							</span>
 							<div className='desc'>
-								<h3 className='mb-5'>Desktop App Development</h3>
+								<h3>Desktop App Development</h3>
 							</div>
 						</div>
 					</div>
@@ -56,7 +56,7 @@ const Services = () => {
 								<i className='flaticon-project-management'></i>
 							</span>
 							<div className='desc'>
-								<h3 className='mb-5'>Project Management</h3>
+								<h3>Project Management</h3>
 							</div>
 						</div>
 					</div>
@@ -66,7 +66,7 @@ const Services = () => {
 								<i className='flaticon-web-settings'></i>
 							</span>
 							<div className='desc'>
-								<h3 className='mb-5'>Web Hosting</h3>
+								<h3>Web Hosting</h3>
 							</div>
 						</div>
 					</div>
@@ -76,7 +76,7 @@ const Services = () => {
 								<i className='flaticon-consultant'></i>
 							</span>
 							<div className='desc'>
-								<h3 className='mb-5'>Software Consultancy</h3>
+								<h3>Software Consultancy</h3>
 							</div>
 						</div>
 					</div>

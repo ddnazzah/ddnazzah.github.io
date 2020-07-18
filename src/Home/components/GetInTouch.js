@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:23:21
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-15 07:23:21
+ * @Last Modified time: 2020-07-18 01:06:27
  */
 
 import React from 'react';
@@ -16,9 +16,9 @@ const GetInTouch = () => {
 				<div className='row justify-content-center'>
 					<div className='col-md-7  text-center' data-aos='fade-up'>
 						<h2>
-							I'm <span>Available</span> for freelancing / employment
+							I'm <span>Available</span> for employment / research
 						</h2>
-						<p>
+						<p className='text-white'>
 							Solution-driven professional excelling in a highly collaborative work environment, finding solutions
 							to challenges and focused on customer satisfaction
 						</p>

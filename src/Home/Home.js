@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-07 04:02:32
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-19 02:14:07
+ * @Last Modified time: 2020-06-19 06:12:26
  */
 
 import React, { useState } from 'react';
@@ -15,9 +15,9 @@ const Home = () => {
 	const [loading] = useState(true);
 	// useFirestoreConnect([{ collection: 'reume', orderBy: ['created_at', 'desc'], limit: 3 }]);
 	useFirestoreConnect([
-		{ collection: 'resume' },
+		{ collection: 'resume', orderBy: ['order', 'desc'] },
 		{ collection: 'skills' },
-		{ collection: 'projects' },
+		{ collection: 'projects', orderBy: ['order', 'asc'] },
 		{ collection: 'other_projects' },
 	]);
 
@@ -27,7 +27,7 @@ const Home = () => {
 	const other_projects = useSelector((state) => state.firestore.ordered.other_projects);
 
 	return !(isLoaded(resume) && isLoaded(skills) && isLoaded(projects) && isLoaded(other_projects)) ? (
-		<Loader loading={loading} />
+		<Loader loading={loading} fullscreen hCenter />
 	) : (
 		<React.Fragment>
 			<Header />

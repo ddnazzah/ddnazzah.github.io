@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-19 02:25:06
+ * @Last Modified time: 2020-07-18 01:48:16
  */
 
 import AnimatedNumber from 'animated-number-react';
@@ -13,7 +13,7 @@ import me_1 from '../../_shared/assets/images/me_1.png';
 const About = ({ number_of_project }) => {
 	const [startEnter, setStartEnter] = useState(false);
 
-	const handleEnter = () => {
+	const _handleWaypointEnter = () => {
 		setStartEnter(true);
 	};
 
@@ -67,19 +67,20 @@ const About = ({ number_of_project }) => {
 								</ul>
 							</div>
 						</div>
-						<Waypoint onEnter={handleEnter}>
+						<Waypoint onEnter={_handleWaypointEnter}>
 							<div className='counter-wrap  d-flex mt-md-3' data-aos='fade-up'>
 								<div className='text'>
 									<p className='mb-4'>
 										{startEnter ? (
 											<AnimatedNumber
 												value={number_of_project}
-												duration={8000}
+												duration={7000}
 												formatValue={(value) => value.toFixed(0)}
 											/>
 										) : (
 											0
-										)}{' '}
+										)}
+										{'+ '}
 										<span> Projects complete</span>
 									</p>
 									<p>
@@ -87,6 +88,7 @@ const About = ({ number_of_project }) => {
 											href='https://drive.google.com/file/d/1WDW6nb8ZctnmiESBfR75hgaplangQHCW/view?usp=sharing'
 											className='btn btn-primary btn-outline-primary py-3 px-3'
 											target='_blank'
+											rel='noopener noreferrer'
 										>
 											Download CV
 										</a>

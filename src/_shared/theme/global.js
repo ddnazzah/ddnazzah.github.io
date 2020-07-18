@@ -1,51 +1,13 @@
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+/*
+ * @Author: Dieu-Donne Nazzah
+ * @Date: 2020-06-19 03:14:40
+ * @Last Modified by: Dieu-Donne Nazzah
+ * @Last Modified time: 2020-06-19 03:47:21
  */
-:root {
-	--blue: #007bff;
-	--indigo: #6610f2;
-	--purple: #6f42c1;
-	--pink: #e83e8c;
-	--red: #dc3545;
-	--orange: #fd7e14;
-	--yellow: #ffc107;
-	--green: #28a745;
-	--teal: #20c997;
-	--cyan: #17a2b8;
-	--white: #fff;
-	--gray: #6c757d;
-	--gray-dark: #343a40;
-	--primary: #007bff;
-	--secondary: #6c757d;
-	--success: #28a745;
-	--info: #17a2b8;
-	--warning: #ffc107;
-	--danger: #dc3545;
-	--light: #f8f9fa;
-	--dark: #343a40;
-	--breakpoint-xs: 0;
-	--breakpoint-sm: 576px;
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 992px;
-	--breakpoint-xl: 1200px;
-	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-}
 
-@font-face {
-	font-family: Calibre;
-	src: url('/fonts/Calibre/Calibre-Medium.woff'), url('/fonts/Calibre/Calibre-Medium.woff') format('woff');
-}
+import { createGlobalStyle } from 'styled-components';
 
-@font-face {
-	font-family: 'SF Mono';
-	src: url('/fonts/SFMono/SFMono-Medium.woff'), url('/fonts/SFMono/SFMono-Medium.woff') format('woff');
-}
-
+export const GlobalStyles = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -78,10 +40,10 @@ body {
 	text-align: left;
 	font-family: Calibre, 'San Francisco', 'SF Pro Text', -apple-system, system-ui, BlinkMacSystemFont, Roboto, 'Helvetica Neue',
 		'Segoe UI', Arial, sans-serif;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 	line-height: 1.8;
 	font-weight: 400;
-	color: #8892b0;
+	color: ${({ theme }) => theme.textDefault};
 	margin: 0;
 	overflow-x: hidden;
 	font-size: 1.1rem;
@@ -94,12 +56,6 @@ body.menu-show {
 	width: 100%;
 }
 
-body.menu-show {
-	overflow: hidden;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-}
 
 [tabindex='-1']:focus {
 	outline: 0 !important;
@@ -196,13 +152,15 @@ sup {
 	top: -0.5em;
 }
 
+
 a {
-	color: #007bff;
+	color: ${({ theme }) => theme.textLight};
 	text-decoration: none;
 	background-color: transparent;
 }
+
 a:hover {
-	color: #0056b3;
+	color: ${({ theme }) => theme.textPrimary};
 	text-decoration: underline;
 }
 
@@ -416,7 +374,7 @@ h6,
 .h6 {
 	margin-bottom: 0.5rem;
 	line-height: 1.5;
-	color: #ccd6f6;
+	color: ${({ theme }) => theme.textLight};
 	font-weight: 400;
 }
 
@@ -2810,8 +2768,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 .btn-primary:hover {
 	color: #fff;
@@ -2826,8 +2784,8 @@ fieldset:disabled a.btn {
 .btn-primary.disabled,
 .btn-primary:disabled {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -3090,13 +3048,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-	color: #007bff;
-	border-color: #007bff;
+	color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 .btn-outline-primary:hover {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
@@ -3105,15 +3063,15 @@ fieldset:disabled a.btn {
 }
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-	color: #007bff;
+	color: ${({ theme }) => theme.textPrimary};
 	background-color: transparent;
 }
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
@@ -3355,11 +3313,11 @@ fieldset:disabled a.btn {
 
 .btn-link {
 	font-weight: 400;
-	color: #007bff;
+	color: ${({ theme }) => theme.textPrimary};
 	text-decoration: none;
 }
 .btn-link:hover {
-	color: #0056b3;
+	color: ${({ theme }) => theme.textPrimary200};
 	text-decoration: underline;
 }
 .btn-link:focus,
@@ -3661,7 +3619,7 @@ input[type='button'].btn-block {
 .dropdown-item:active {
 	color: #fff;
 	text-decoration: none;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 }
 .dropdown-item.disabled,
 .dropdown-item:disabled {
@@ -4028,8 +3986,8 @@ input[type='button'].btn-block {
 }
 .custom-control-input:checked ~ .custom-control-label::before {
 	color: #fff;
-	border-color: #007bff;
-	background-color: #007bff;
+	border-color: ${({ theme }) => theme.textPrimary};
+	background-color: ${({ theme }) => theme.textPrimary};
 }
 .custom-control-input:focus ~ .custom-control-label::before {
 	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
@@ -4087,8 +4045,8 @@ input[type='button'].btn-block {
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-	border-color: #007bff;
-	background-color: #007bff;
+	border-color: ${({ theme }) => theme.textPrimary};
+	background-color: ${({ theme }) => theme.textPrimary};
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
@@ -4310,7 +4268,7 @@ input[type='button'].btn-block {
 	width: 1rem;
 	height: 1rem;
 	margin-top: -0.25rem;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 	border: 0;
 	border-radius: 1rem;
 	-webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -4344,7 +4302,7 @@ input[type='button'].btn-block {
 .custom-range::-moz-range-thumb {
 	width: 1rem;
 	height: 1rem;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 	border: 0;
 	border-radius: 1rem;
 	-webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -4381,7 +4339,7 @@ input[type='button'].btn-block {
 	margin-top: 0;
 	margin-right: 0.2rem;
 	margin-left: 0.2rem;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 	border: 0;
 	border-radius: 1rem;
 	-webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -4520,7 +4478,7 @@ av-tabs {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
 	color: #fff;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 }
 
 .nav-fill .nav-item {
@@ -5282,13 +5240,13 @@ av-tabs {
 	padding: 0.5rem 0.75rem;
 	margin-left: -1px;
 	line-height: 1.25;
-	color: #007bff;
+	color: ${({ theme }) => theme.textPrimary};
 	background-color: #fff;
 	border: 1px solid #dee2e6;
 }
 .page-link:hover {
 	z-index: 2;
-	color: #0056b3;
+	color: ${({ theme }) => theme.textPrimary200};
 	text-decoration: none;
 	background-color: #e9ecef;
 	border-color: #dee2e6;
@@ -5314,8 +5272,8 @@ av-tabs {
 .page-item.active .page-link {
 	z-index: 1;
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 
 .page-item.disabled .page-link {
@@ -5407,7 +5365,7 @@ a.badge:focus {
 
 .badge-primary {
 	color: #fff;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 }
 a.badge-primary:hover,
 a.badge-primary:focus {
@@ -5717,7 +5675,7 @@ a.badge-dark.focus {
 	color: #fff;
 	text-align: center;
 	white-space: nowrap;
-	background-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
 	-webkit-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
 	transition: width 0.6s ease;
@@ -5846,8 +5804,8 @@ a.badge-dark.focus {
 .list-group-item.active {
 	z-index: 2;
 	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+	background-color: ${({ theme }) => theme.textPrimary};
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 
 .list-group-horizontal {
@@ -7007,7 +6965,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-	background-color: #007bff !important;
+	background-color: ${({ theme }) => theme.textPrimary} !important;
 }
 
 a.bg-primary:hover,
@@ -7143,7 +7101,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-	border-color: #007bff !important;
+	border-color: ${({ theme }) => theme.textPrimary} !important;
 }
 
 .border-secondary {
@@ -10487,12 +10445,12 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-	color: #007bff !important;
+	color: ${({ theme }) => theme.textPrimary} !important;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-	color: #0056b3 !important;
+	color: ${({ theme }) => theme.textPrimary200} !important;
 }
 
 .text-secondary {
@@ -10687,18 +10645,18 @@ a {
 	-webkit-transition: 0.3s all ease;
 	-o-transition: 0.3s all ease;
 	transition: 0.3s all ease;
-	color: #ccd6f6;
+	color: ${({ theme }) => theme.textLight};
 }
 
 a:hover,
 a:focus {
 	text-decoration: none;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 	outline: none !important;
 }
 
 .text-primary {
-	color: rgb(100, 255, 218) !important;
+	color: ${({ theme }) => theme.textPrimary} !important;
 }
 
 .ddnazzah-navbar-light {
@@ -10711,7 +10669,7 @@ a:focus {
 }
 @media (max-width: 991.98px) {
 	.ddnazzah-navbar-light {
-		background: rgb(10, 25, 47) !important;
+		background: ${({ theme }) => theme.body} !important;
 		position: relative;
 		top: 0;
 		padding-top: 0;
@@ -10772,7 +10730,7 @@ a:focus {
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	visibility: visible;
 	-webkit-transform: scaleX(0);
 	-moz-transform: scaleX(0);
@@ -10804,12 +10762,12 @@ a:focus {
 }
 .ddnazzah-navbar-light .navbar-nav > .nav-item.cta > a {
 	color: #fff;
-	border: 1px solid rgb(100, 255, 218);
+	border: 1px solid ${({ theme }) => theme.textPrimary};
 	padding-top: 0.7rem;
 	padding-bottom: 0.7rem;
 	padding-left: 18px;
 	padding-right: 18px;
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	margin-top: 0;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -10821,8 +10779,8 @@ a:focus {
 	color: #fff;
 }
 .ddnazzah-navbar-light .navbar-nav > .nav-item.cta > a:hover {
-	background: rgb(100, 255, 218);
-	border: 1px solid rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
+	border: 1px solid ${({ theme }) => theme.textPrimary};
 }
 .ddnazzah-navbar-light .navbar-nav > .nav-item.cta.cta-colored a {
 	border: 1px solid #a0f669;
@@ -10831,7 +10789,7 @@ a:focus {
 .ddnazzah-navbar-light .navbar-nav > .nav-item .nav-link.active {
 	background: transparent;
 	background: none;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .ddnazzah-navbar-light .navbar-nav > .nav-item .nav-link.active span:before {
 	visibility: visible;
@@ -10841,7 +10799,7 @@ a:focus {
 }
 @media (max-width: 991.98px) {
 	.ddnazzah-navbar-light .navbar-nav > .nav-item.active > a {
-		color: rgb(100, 255, 218);
+		color: ${({ theme }) => theme.textPrimary};
 	}
 }
 .ddnazzah-navbar-light .navbar-toggler {
@@ -10856,20 +10814,21 @@ a:focus {
 .ddnazzah-navbar-light .navbar-toggler:hover,
 .ddnazzah-navbar-light .navbar-toggler:focus {
 	text-decoration: none;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 	outline: none !important;
 }
+
 .ddnazzah-navbar-light.scrolled {
 	position: fixed;
 	right: 0;
 	left: 0;
 	top: 0;
 	margin-top: -130px;
-	background: rgb(10, 25, 47) !important;
+	background: ${({ theme }) => theme.body} !important;
 	-webkit-box-shadow: 0 0 10px 0 rgba(100, 255, 218, 0.1);
 	box-shadow: 0 0 10px 0 rgba(100, 255, 218, 0.1);
 	padding: 0 15px;
-	color: #64ffda;
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 .ddnazzah-navbar-light.scrolled .nav-item > .nav-link {
@@ -10884,11 +10843,11 @@ a:focus {
 	}
 }
 .ddnazzah-navbar-light.scrolled .nav-item.active > a {
-	color: rgb(100, 255, 218) !important;
+	color: ${({ theme }) => theme.textPrimary} !important;
 }
 .ddnazzah-navbar-light.scrolled .nav-item.cta > a {
 	color: #fff !important;
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	border: none !important;
 	padding-top: 0.5rem !important;
 	padding-bottom: 0.5rem !important;
@@ -10905,7 +10864,7 @@ a:focus {
 	color: #fff !important;
 }
 .ddnazzah-navbar-light.scrolled .nav-item.cta.cta-colored span {
-	border-color: rgb(100, 255, 218);
+	border-color: ${({ theme }) => theme.textPrimary};
 }
 @media (max-width: 991.98px) {
 	.ddnazzah-navbar-light.scrolled .navbar-nav {
@@ -10926,10 +10885,10 @@ a:focus {
 	letter-spacing: 0.1em;
 }
 .ddnazzah-navbar-light.scrolled .nav-link {
-	color: rgb(10, 25, 47) !important;
+	color: ${({ theme }) => theme.body} !important;
 }
 .ddnazzah-navbar-light.scrolled .nav-link.active {
-	color: rgb(100, 255, 218) !important;
+	color: ${({ theme }) => theme.textPrimary} !important;
 }
 .ddnazzah-navbar-light.scrolled.awake {
 	margin-top: 0px;
@@ -11029,14 +10988,14 @@ a:focus {
 }
 .owl-carousel.home-slider {
 	position: relative;
-	height: 100vh;
+	height: 750px;
 	z-index: 0;
 }
 .owl-carousel.home-slider .slider-item {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 100vh;
+	height: 750px;
 	position: relative;
 	z-index: 0;
 }
@@ -11051,11 +11010,11 @@ a:focus {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 	opacity: 0;
 }
 .owl-carousel.home-slider .slider-item .slider-text {
-	height: 100vh;
+	height: 750px;
 	z-index: 0;
 }
 @media (max-width: 991.98px) {
@@ -11074,7 +11033,7 @@ a:focus {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 	opacity: 0;
 }
 
@@ -11128,11 +11087,11 @@ a:focus {
 @media (min-width: 992px) {
 	.owl-carousel.home-slider .slider-item .slider-text .one-forth .text {
 		position: absolute;
-		top: 60%;
+		top: 50%;
 		left: 0;
-		-webkit-transform: translateY(-60%);
-		-ms-transform: translateY(-60%);
-		transform: translateY(-60%);
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
 		right: 0;
 		max-width: 50%;
 		padding-left: 45px;
@@ -11140,12 +11099,12 @@ a:focus {
 	}
 }
 .owl-carousel.home-slider .slider-item .slider-text .subheading {
-	color: rgb(10, 25, 47);
+	color: ${({ theme }) => theme.body};
 	font-weight: 600;
 	font-size: 14px;
 	letter-spacing: 3px;
 	text-transform: uppercase;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .owl-carousel.home-slider .slider-item .slider-text .text {
 	position: relative;
@@ -11159,7 +11118,7 @@ a:focus {
 }
 .owl-carousel.home-slider .slider-item .slider-text h1 span {
 	font-weight: 800;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 @media (max-width: 991.98px) {
 	.owl-carousel.home-slider .slider-item .slider-text h1 {
@@ -11192,7 +11151,7 @@ a:focus {
 	}
 }
 .owl-carousel.home-slider .slider-item .slider-text .btn-custom {
-	border: 1px solid rgb(100, 255, 218);
+	border: 1px solid ${({ theme }) => theme.textPrimary};
 	padding: 5px 20px;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -11227,7 +11186,7 @@ a:focus {
 .owl-carousel.home-slider .owl-nav .owl-next span:before {
 	font-size: 20px;
 	margin-top: 7px;
-	color: rgb(10, 25, 47);
+	color: ${({ theme }) => theme.body};
 }
 .owl-carousel.home-slider .owl-nav .owl-prev {
 	top: 0 !important;
@@ -11240,14 +11199,14 @@ a:focus {
 }
 .owl-carousel.home-slider .owl-nav .owl-prev:hover,
 .owl-carousel.home-slider .owl-nav .owl-prev:focus {
-	background: rgb(10, 25, 47) !important;
+	background: ${({ theme }) => theme.body} !important;
 	outline: none !important;
 }
 .owl-carousel.home-slider .owl-nav .owl-prev:hover span:before,
 .owl-carousel.home-slider .owl-nav .owl-prev:focus span:before {
 	font-size: 20px;
 	margin-top: 7px;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .owl-carousel.home-slider .owl-nav .owl-next {
 	top: 0 !important;
@@ -11260,14 +11219,14 @@ a:focus {
 }
 .owl-carousel.home-slider .owl-nav .owl-next:hover,
 .owl-carousel.home-slider .owl-nav .owl-next:focus {
-	background: rgb(10, 25, 47) !important;
+	background: ${({ theme }) => theme.body} !important;
 	outline: none !important;
 }
 .owl-carousel.home-slider .owl-nav .owl-next:hover span:before,
 .owl-carousel.home-slider .owl-nav .owl-next:focus span:before {
 	font-size: 24px;
 	margin-top: 7px;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .owl-carousel.home-slider .owl-dots {
 	position: absolute;
@@ -11308,7 +11267,7 @@ a:focus {
 	bottom: 0;
 	content: '';
 	opacity: 0;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 }
 
 .slider-text h1 {
@@ -11333,7 +11292,7 @@ a:focus {
 	font-weight: 700;
 }
 .slider-text p strong a {
-	color: rgb(10, 25, 47);
+	color: ${({ theme }) => theme.body};
 }
 
 .slider-text .breadcrumbs {
@@ -11356,11 +11315,11 @@ a:focus {
 }
 .slider-text .breadcrumbs span a:hover,
 .slider-text .breadcrumbs span a:focus {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .slider-text .breadcrumbs span a:hover i,
 .slider-text .breadcrumbs span a:focus i {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 .slider-text .bread {
@@ -11378,7 +11337,7 @@ a:focus {
 }
 
 .bg-primary {
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 }
 
 .btn {
@@ -11397,23 +11356,23 @@ a:focus {
 	outline: none;
 }
 .btn.btn-primary {
-	background: rgb(100, 255, 218);
-	border: 1px solid rgb(100, 255, 218) !important;
-	color: rgb(10, 25, 47) !important;
+	background: ${({ theme }) => theme.textPrimary};
+	border: 1px solid ${({ theme }) => theme.textPrimary} !important;
+	color: ${({ theme }) => theme.body} !important;
 }
 .btn.btn-primary:hover {
-	border: 1px solid rgb(100, 255, 218) !important;
+	border: 1px solid ${({ theme }) => theme.textPrimary} !important;
 	background: rgba(100, 255, 218, 0.9) !important;
-	color: rgb(10, 25, 47) !important;
+	color: ${({ theme }) => theme.body} !important;
 }
 .btn.btn-primary.btn-outline-primary {
-	border: 1px solid rgb(100, 255, 218) !important;
+	border: 1px solid ${({ theme }) => theme.textPrimary} !important;
 	background: transparent !important;
-	color: rgb(100, 255, 218) !important;
+	color: ${({ theme }) => theme.textPrimary} !important;
 }
 .btn.btn-primary.btn-outline-primary:hover {
 	border: 1px solid transparent !important;
-	background: rgb(100, 255, 218) !important;
+	background: ${({ theme }) => theme.textPrimary} !important;
 	color: #fff !important;
 }
 .btn.btn-secondary {
@@ -11439,10 +11398,10 @@ a:focus {
 .btn.btn-white {
 	background: #fff !important;
 	border: 1px solid #fff !important;
-	color: rgb(10, 25, 47) !important;
+	color: ${({ theme }) => theme.body} !important;
 }
 .btn.btn-white:hover {
-	border: 1px solid rgb(10, 25, 47);
+	border: 1px solid ${({ theme }) => theme.body};
 	background: #fff !important;
 	color: #fff;
 }
@@ -11453,7 +11412,7 @@ a:focus {
 }
 .btn.btn-white.btn-outline-white:hover {
 	border: 1px solid transparent;
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	color: #fff;
 }
 
@@ -11497,12 +11456,12 @@ a:focus {
 }
 .ddnazzah-about .counter-wrap .text p span.number {
 	font-weight: 600;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 .services-1 {
 	margin-bottom: 40px;
-	padding: 2.5em;
+	padding: 2em;
 	background: rgba(255, 255, 255, 0.1);
 	width: 100%;
 	-webkit-box-shadow: 0px 20px 69px -27px rgba(10, 25, 47, 0.17);
@@ -11511,16 +11470,17 @@ a:focus {
 }
 .services-1 .icon {
 	display: block;
+	margin-bottom: 30px;
 }
 .services-1 .icon i {
 	font-size: 60px;
 	line-height: 1;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .services-1 .float-left i {
 	font-size: 30px !important;
 	line-height: 1;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .services-1 .desc h3 {
 	line-height: 1.3;
@@ -11539,7 +11499,7 @@ a:focus {
 	content: '';
 	width: 30px;
 	height: 1px;
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	margin: 0 auto;
 }
 .services-1 .desc h3 a {
@@ -11555,20 +11515,9 @@ a:focus {
 	text-transform: uppercase;
 	font-size: 12px;
 	margin-bottom: 10px;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
-/* .services-1:hover {
-	background: rgb(100, 255, 218);
-}
-.services-1:hover .icon i {
-	color: #fff;
-}
-.services-1:hover h3 {
-	color: rgb(10, 25, 47);
-}
-.services-1:hover h3:after {
-	background: rgb(10, 25, 47);
-} */
+
 
 .progress-wrap {
 	width: 100%;
@@ -11589,12 +11538,12 @@ a:focus {
 }
 
 .progress-bar {
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	font-size: 12px;
 	line-height: 1.2;
-	color: rgb(10, 25, 47);
+	color: ${({ theme }) => theme.body};
 	font-weight: 600;
 	position: relative;
 	overflow: visible;
@@ -11610,7 +11559,7 @@ a:focus {
 	width: 34px;
 	height: 34px;
 	content: '';
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
@@ -11628,7 +11577,7 @@ a:focus {
 }
 
 .ddnazzah-get-in-touch {
-	background: rgb(100, 255, 218);
+	background: ${({ theme }) => theme.textPrimary};
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -11636,7 +11585,6 @@ a:focus {
 }
 
 .ddnazzah-get-in-touch .overlay {
-	/* background: #0f292f; */
 	opacity: 0.75;
 	position: absolute;
 	top: 0;
@@ -11655,7 +11603,7 @@ a:focus {
 }
 
 .ddnazzah-get-in-touch h2 span {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 @media (min-width: 992px) {
@@ -11714,7 +11662,7 @@ a:focus {
 	bottom: 0;
 	content: '';
 	opacity: 0.2;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 	z-index: -1;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -11796,17 +11744,13 @@ a:focus {
 .form-control {
 	height: 52px !important;
 	background: #fff !important;
-	color: rgb(10, 25, 47) !important;
+	color: ${({ theme }) => theme.body} !important;
 	font-size: 18px;
 	border-radius: 5px;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 }
 
-/* .form-control:focus,
-.form-control:active {
-	border-color: transparent !important;
-} */
 
 textarea.form-control {
 	height: inherit !important;
@@ -11823,13 +11767,9 @@ textarea.form-control {
 	}
 }
 
-.ddnazzah-animate {
-	/* opacity: 0; */
-	/* visibility: hidden; */
-}
 
 .bg-primary {
-	background: rgb(100, 255, 218) !important;
+	background: ${({ theme }) => theme.textPrimary} !important;
 }
 
 .about-author {
@@ -11866,7 +11806,7 @@ textarea.form-control {
 
 .ddnazzah-footer {
 	font-size: 16px;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 	padding: 7em 0 4em 0;
 	z-index: 0;
 }
@@ -11910,7 +11850,7 @@ textarea.form-control {
 .ddnazzah-footer .ddnazzah-heading-2 {
 	font-size: 17px;
 	font-weight: 400;
-	color: rgb(10, 25, 47);
+	color: ${({ theme }) => theme.body};
 }
 
 .ddnazzah-footer-social {
@@ -11938,7 +11878,7 @@ textarea.form-control {
 	display: block;
 	width: 1px;
 	height: 90px;
-	background-color: #8892b0;
+	background-color: ${({ theme }) => theme.textDefault};
 	margin: 0px auto;
 }
 
@@ -11955,7 +11895,7 @@ textarea.form-control {
 }
 
 .ddnazzah-footer-social li a span {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .ddnazzah-footer-social li a:hover,
@@ -12047,14 +11987,14 @@ textarea.form-control {
 }
 .footer-small-nav > li a:hover,
 .footer-small-nav > li a:focus {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 .media .ddnazzah-icon {
 	width: 100px;
 }
 .media .ddnazzah-icon span {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 #map {
@@ -12188,7 +12128,7 @@ textarea.form-control {
 	display: block;
 	width: 100%;
 	text-align: center;
-	background: rgb(10, 25, 47);
+	background: ${({ theme }) => theme.body};
 	padding: 30px 20px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -12200,7 +12140,7 @@ textarea.form-control {
 .ddnazzah-counter .text strong.number {
 	font-weight: 700;
 	font-size: 30px;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 	display: block;
 }
 
@@ -12220,7 +12160,7 @@ textarea.form-control {
 	display: block;
 	font-size: 72px;
 	font-weight: bold;
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 .ddnazzah-counter .ddnazzah-label {
@@ -12268,7 +12208,7 @@ textarea.form-control {
 .blog-entry .text .heading a:hover,
 .blog-entry .text .heading a:focus,
 .blog-entry .text .heading a:active {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .blog-entry .meta {
 	display: inline-block;
@@ -12279,13 +12219,13 @@ textarea.form-control {
 	letter-spacing: 2px;
 }
 .blog-entry .meta span {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .blog-entry .meta a {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .blog-entry .meta a:hover {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 
 .block-23 ul {
@@ -12375,7 +12315,7 @@ textarea.form-control {
 	border-radius: 50%;
 }
 .contact-section .box .icon span {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 	font-size: 30px;
 }
 .contact-section .box h3 {
@@ -12416,7 +12356,7 @@ textarea.form-control {
 	outline: none !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .block-21 .blog-img {
@@ -12442,7 +12382,7 @@ textarea.form-control {
 .block-21 .text .heading a:hover,
 .block-21 .text .heading a:active,
 .block-21 .text .heading a:focus {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .block-21 .text .meta > div {
 	display: inline-block;
@@ -12456,7 +12396,7 @@ textarea.form-control {
 	font-weight: 600;
 }
 
-/* Blog*/
+
 .post-info {
 	font-size: 12px;
 	text-transform: uppercase;
@@ -12530,7 +12470,7 @@ textarea.form-control {
 	font-size: 13px;
 	letter-spacing: 0.1em;
 	color: rgba(255, 255, 255, 0.3);
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 	font-weight: 600;
 	margin-bottom: 20px;
 }
@@ -12617,30 +12557,13 @@ textarea.form-control {
 .categories li a:focus,
 .sidelink li a:hover,
 .sidelink li a:focus {
-	color: rgb(100, 255, 218);
+	color: ${({ theme }) => theme.textPrimary};
 }
 .categories li.active a,
 .sidelink li.active a {
-	color: rgb(10, 25, 47);
+	color: ${({ theme }) => theme.body};
 	font-style: italic;
 }
-/* 
-#ddnazzah-loader {
-	
-	left: 50%;
-	top: 50%;
-	
-	background-color: rgba(255, 255, 255, 0.9);
-	-webkit-box-shadow: 0px 24px 64px rgba(10, 25, 47, 0.24);
-	box-shadow: 0px 24px 64px rgba(10, 25, 47, 0.24);
-	border-radius: 16px;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
-	-o-transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
-	transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
-	z-index: 1000;
-} */
 
 .fullscreen {
 	padding: 0;
@@ -12654,12 +12577,9 @@ textarea.form-control {
 	-o-transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
 	transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
 	z-index: 1000;
-	/* -webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%); */
+
 }
 
-/* ******************************************resume***************************** */
 .resume-wrap {
 	display: flex;
 	flex-grow: 1;
@@ -12716,7 +12636,7 @@ textarea.form-control {
 	top: 50%;
 	right: -27px;
 	border-radius: 50%;
-	background-color: rgb(100, 255, 218);
+	background-color: ${({ theme }) => theme.textPrimary};
 	transition: all 0.3s ease;
 	border: 1px solid transparent;
 }
@@ -12740,3 +12660,5 @@ textarea.form-control {
 	margin-top: 0;
 	margin-bottom: 2px;
 }
+
+`;

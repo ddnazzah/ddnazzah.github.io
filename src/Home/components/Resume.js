@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:24:26
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-06-15 05:28:58
+ * @Last Modified time: 2020-07-18 01:02:37
  */
 
 import React from 'react';
@@ -46,6 +46,8 @@ const Resume = ({ data }) => {
 							<a
 								href='https://drive.google.com/file/d/1WDW6nb8ZctnmiESBfR75hgaplangQHCW/view?usp=sharing'
 								className='btn btn-primary btn-outline-primary py-4 px-5'
+								target='_blank'
+								rel='noopener noreferrer'
 							>
 								Download CV
 							</a>
