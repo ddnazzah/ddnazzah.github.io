@@ -1,15 +1,22 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 /*
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:21:08
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 05:15:01
+ * @Last Modified time: 2020-07-18 14:23:01
  */
-import React from 'react';
+import React, { useEffect } from 'react';
+import Typed from 'typed.js';
 import me_2 from '../../_shared/assets/images/me_2.png';
 import { useWindowSize } from '../../_shared/hooks';
 
 const Hero = () => {
 	const [, height] = useWindowSize();
+
+	useEffect(() => {
+		new Typed('#typedIntro', introOptions);
+		new Typed('#typedIntroDesc', introDescOptions);
+	}, []);
 
 	return (
 		<section id='home-section' className='hero'>
@@ -30,15 +37,17 @@ const Hero = () => {
 							<div
 								className='one-forth d-flex align-items-center '
 								// data-scrollax=" properties: { translateY: '70%' }"
-								data-aos='fade-up'
-								data-aos-delay='1200'
+								// data-aos='fade-up'
+								// data-aos-delay='1200'
 							>
 								<div className='text'>
 									<span className='subheading'>Hello!</span>
 									<h1 className='mb-4 mt-3'>
-										I'm <span>Dieu-Donne Nazzah</span>
+										<span className='text-white' id='typedIntro'></span>
 									</h1>
-									<h2 className='mb-4'>I develop things for the world.</h2>
+									<h2 className='mb-4'>
+										<span id='typedIntroDesc'></span>
+									</h2>
 									<p>
 										<a href='#contact-section' className='btn btn-primary btn-outline-primary py-3 px-4 mr-2'>
 											Get in touch
@@ -88,3 +97,14 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const introDescOptions = {
+	strings: ['I develop things for the world.', 'Check out my portfolio'],
+	typeSpeed: 60,
+	loop: true,
+};
+
+const introOptions = {
+	strings: ["I'm <span>Dieu-Donne Nazzah</span>"],
+	typeSpeed: 60,
+};
