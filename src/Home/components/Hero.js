@@ -3,7 +3,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:21:08
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 16:56:33
+ * @Last Modified time: 2020-07-18 23:52:22
  */
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';

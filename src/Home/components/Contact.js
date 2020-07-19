@@ -2,9 +2,10 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:25:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-12 21:58:08
+ * @Last Modified time: 2020-07-19 06:17:50
  */
 
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useFirestore } from 'react-redux-firebase';
 import { useToasts } from 'react-toast-notifications';
@@ -29,8 +30,6 @@ const Contact = () => {
 	useEffect(() => {
 		const errors = validate(formState.values, ContactSchema);
 
-		console.log(errors);
-
 		setFormState((formState) => ({
 			...formState,
 			isValid: errors ? false : true,
@@ -41,8 +40,6 @@ const Contact = () => {
 	const hasError = (field) => (formState.touched[field] && formState.errors[field] ? true : false);
 
 	const handleChange = (event) => {
-		console.log(event.target.name, event.target.value);
-
 		event.persist();
 
 		setFormState((formState) => ({
@@ -63,10 +60,21 @@ const Contact = () => {
 
 		setLoading(true);
 
+		console.log(formState);
+
 		try {
+			await axios.post('http://localhost:4000/mails/dieudonnenazzah', { ...formState.values });
+
 			await firestore.add('/messages', formState.values);
+
+			setFormState({
+				isValid: false,
+				values: {},
+				touched: {},
+				errors: {},
+			});
+
 			addToast('Message Sent. I am glad to hear from you', { appearance: 'success', autoDismiss: true });
-			console.log('success');
 		} catch (error) {
 			console.log(error);
 
