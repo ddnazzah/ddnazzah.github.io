@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:25:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-19 06:17:50
+ * @Last Modified time: 2020-07-19 06:28:26
  */
 
 import axios from 'axios';
@@ -60,8 +60,6 @@ const Contact = () => {
 
 		setLoading(true);
 
-		console.log(formState);
-
 		try {
 			await axios.post('http://localhost:4000/mails/dieudonnenazzah', { ...formState.values });
 
@@ -76,8 +74,6 @@ const Contact = () => {
 
 			addToast('Message Sent. I am glad to hear from you', { appearance: 'success', autoDismiss: true });
 		} catch (error) {
-			console.log(error);
-
 			addToast(error.message, { appearance: 'error', autoDismiss: true });
 		}
 
