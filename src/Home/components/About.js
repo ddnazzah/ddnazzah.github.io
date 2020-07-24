@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 05:15:06
+ * @Last Modified time: 2020-07-24 01:40:15
  */
 
 import AnimatedNumber from 'animated-number-react';
@@ -108,7 +108,7 @@ const About = ({ number_of_project }) => {
 									</p>
 									<p>
 										<a
-											href='https://drive.google.com/file/d/1WDW6nb8ZctnmiESBfR75hgaplangQHCW/view?usp=sharing'
+											href='https://drive.google.com/file/d/1mU42Zn2zDtm9evpV3Og09e6t0nsl0o4A/view?usp=sharing'
 											className='btn btn-primary btn-outline-primary py-3 px-3'
 											target='_blank'
 											rel='noopener noreferrer'

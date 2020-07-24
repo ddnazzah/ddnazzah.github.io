@@ -44,7 +44,7 @@ const Resume = ({ data }) => {
 					<div className='col-md-6 text-center' data-aos='fade-up'>
 						<p>
 							<a
-								href='https://drive.google.com/file/d/1WDW6nb8ZctnmiESBfR75hgaplangQHCW/view?usp=sharing'
+								href='https://drive.google.com/file/d/1mU42Zn2zDtm9evpV3Og09e6t0nsl0o4A/view?usp=sharing'
 								className='btn btn-primary btn-outline-primary py-4 px-5'
 								target='_blank'
 								rel='noopener noreferrer'

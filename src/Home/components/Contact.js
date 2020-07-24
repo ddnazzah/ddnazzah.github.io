@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:25:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-20 05:48:07
+ * @Last Modified time: 2020-07-20 05:53:57
  */
 
 import axios from 'axios';
@@ -61,7 +61,7 @@ const Contact = () => {
 		setLoading(true);
 
 		try {
-			await axios.post('https://ddmailer.herokuapp.com/mails/mails/dieudonnenazzah', { ...formState.values });
+			await axios.post('https://ddmailer.herokuapp.com/mails/dieudonnenazzah', { ...formState.values });
 
 			await firestore.add('/messages', formState.values);
 
