@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-24 01:40:15
+ * @Last Modified time: 2020-07-24 12:56:51
  */
 
 import AnimatedNumber from 'animated-number-react';
@@ -113,7 +113,7 @@ const About = ({ number_of_project }) => {
 											target='_blank'
 											rel='noopener noreferrer'
 										>
-											Download CV
+											Resume
 										</a>
 									</p>
 								</div>
