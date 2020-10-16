@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-10-16 02:06:31
+ * @Last Modified time: 2020-10-16 02:27:33
  */
 
 import AnimatedNumber from 'animated-number-react';
@@ -49,7 +49,7 @@ const About = ({ number_of_project }) => {
 										{' '}
 										Kwame Nkrumah University of Science and Technology
 									</a>{' '}
-									with a bachelor's in Computer Engineering and for the past 4+ years, I have been a team player
+									with a bachelor's in Computer Engineering and for the past 3+ years, I have been a team player
 									and team leader providing solutions with the <a href='#projects-section'>stuffs I build</a>.
 								</p>
 								<p>
