@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:33:51
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 02:09:03
+ * @Last Modified time: 2020-10-16 02:03:07
  */
 import React from 'react';
 
@@ -23,21 +23,19 @@ const Projects = ({ data, otherData }) => {
 					<div className='row'>
 						{data.map((project, index) => (
 							<div className={gridSizes[index % 4] === 4 ? 'col-md-4' : 'col-md-8'} key={project.id}>
-								<div
-									className='project img  d-flex justify-content-center align-items-center'
-									style={{ backgroundImage: `url(${project.image})` }}
-									data-aos='fade-up'
-								>
-									<div className='overlay'></div>
-									<div className='text text-center p-4'>
-										<h3>
-											<a href={project.link} target='_blank' rel='noopener noreferrer'>
-												{project.name}
-											</a>
-										</h3>
-										<span>{project.tech}</span>
+								<a href={project.link} target='_blank' rel='noopener noreferrer'>
+									<div
+										className='project img  d-flex justify-content-center align-items-center'
+										style={{ backgroundImage: `url(${project.image})` }}
+										data-aos='fade-up'
+									>
+										<div className='overlay'></div>
+										<div className='text text-center p-4'>
+											<h3>{project.name}</h3>
+											<span>{project.tech}</span>
+										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 						))}
 					</div>
@@ -62,17 +60,14 @@ const Projects = ({ data, otherData }) => {
 									<div className='desc'>
 										<h3 className='mb-5'>{project.name}</h3>
 										<p className='text-left'>{project.description}</p>
+										<span>{project.tech}</span>
 										{project.link ? (
 											<a href={project.link} target='_blank' rel='noopener noreferrer'>
 												<span className='icon float-right'>
 													<i className='icon-open_in_new' style={{ fontSize: '1rem' }}></i>
 												</span>
 											</a>
-										) : (
-											<span className='icon float-right text-lowercase'>
-												<i style={{ fontSize: '1rem' }}>private</i>
-											</span>
-										)}
+										) : null}
 									</div>
 								</div>
 							</div>

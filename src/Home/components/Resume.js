@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:24:26
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 01:02:37
+ * @Last Modified time: 2020-10-16 02:07:03
  */
 
 import React from 'react';
@@ -44,7 +44,7 @@ const Resume = ({ data }) => {
 					<div className='col-md-6 text-center' data-aos='fade-up'>
 						<p>
 							<a
-								href='https://drive.google.com/file/d/1mU42Zn2zDtm9evpV3Og09e6t0nsl0o4A/view?usp=sharing'
+								href='https://drive.google.com/file/d/1wyWt80my9HUC3hsxTSSLB5FLq64Vp5Kj/view?usp=sharing'
 								className='btn btn-primary btn-outline-primary py-4 px-5'
 								target='_blank'
 								rel='noopener noreferrer'

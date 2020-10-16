@@ -2,7 +2,7 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 18:22:31
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-08-06 06:05:30
+ * @Last Modified time: 2020-10-16 02:06:31
  */
 
 import AnimatedNumber from 'animated-number-react';
@@ -40,8 +40,8 @@ const About = ({ number_of_project }) => {
 								<h1 className='big'>About</h1>
 								<h2 className='mb-4'>About Me</h2>
 								<p>
-									I am a freelance software engineer based in Accra, Ghana. I develop software for the web,
-									mobile and desktop platforms using state of the art technologies mostly in Javascript and PHP.
+									I am a software engineer based in Accra, Ghana. I develop software for the web, mobile and
+									desktop platforms using state of the art technologies mostly in Javascript and PHP.
 								</p>
 								<p>
 									I graduated from{' '}
@@ -108,7 +108,7 @@ const About = ({ number_of_project }) => {
 									</p>
 									<p>
 										<a
-											href='https://drive.google.com/file/d/1mU42Zn2zDtm9evpV3Og09e6t0nsl0o4A/view?usp=sharing'
+											href='https://drive.google.com/file/d/1wyWt80my9HUC3hsxTSSLB5FLq64Vp5Kj/view?usp=sharing'
 											className='btn btn-primary btn-outline-primary py-3 px-3'
 											target='_blank'
 											rel='noopener noreferrer'
