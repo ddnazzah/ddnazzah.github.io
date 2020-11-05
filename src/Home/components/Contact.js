@@ -2,141 +2,168 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:25:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-20 05:53:57
+ * @Last Modified time: 2020-11-05 02:57:10
  */
 
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useFirestore } from 'react-redux-firebase';
-import { useToasts } from 'react-toast-notifications';
-import validate from 'validate.js';
-import about from '../../_shared/assets/images/about.jpg';
-import { Loader } from '../../_shared/components';
-import { ContactSchema } from '../_services';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useFirestore } from "react-redux-firebase";
+import { useToasts } from "react-toast-notifications";
+import validate from "validate.js";
+import { ContactSchema } from "../_services";
 
 const Contact = () => {
-	const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-	const firestore = useFirestore();
-	const { addToast } = useToasts();
+    const firestore = useFirestore();
+    const { addToast } = useToasts();
 
-	const [formState, setFormState] = useState({
-		isValid: false,
-		values: {},
-		touched: {},
-		errors: {},
-	});
+    const [formState, setFormState] = useState({
+        isValid: false,
+        values: {},
+        touched: {},
+        errors: {},
+    });
 
-	useEffect(() => {
-		const errors = validate(formState.values, ContactSchema);
+    useEffect(() => {
+        const errors = validate(formState.values, ContactSchema);
 
-		setFormState((formState) => ({
-			...formState,
-			isValid: errors ? false : true,
-			errors: errors || {},
-		}));
-	}, [formState.values]);
+        setFormState((formState) => ({
+            ...formState,
+            isValid: errors ? false : true,
+            errors: errors || {},
+        }));
+    }, [formState.values]);
 
-	const hasError = (field) => (formState.touched[field] && formState.errors[field] ? true : false);
+    const hasError = (field) =>
+        formState.touched[field] && formState.errors[field] ? true : false;
 
-	const handleChange = (event) => {
-		event.persist();
+    const handleChange = (event) => {
+        event.persist();
 
-		setFormState((formState) => ({
-			...formState,
-			values: {
-				...formState.values,
-				[event.target.name]: event.target.value,
-			},
-			touched: {
-				...formState.touched,
-				[event.target.name]: true,
-			},
-		}));
-	};
+        setFormState((formState) => ({
+            ...formState,
+            values: {
+                ...formState.values,
+                [event.target.name]: event.target.value,
+            },
+            touched: {
+                ...formState.touched,
+                [event.target.name]: true,
+            },
+        }));
+    };
 
-	const handleFormSubmit = async (event) => {
-		event.preventDefault();
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
 
-		setLoading(true);
+        setLoading(true);
 
-		try {
-			await axios.post('https://ddmailer.herokuapp.com/mails/dieudonnenazzah', { ...formState.values });
+        try {
+            await axios.post(
+                "https://ddmailer.herokuapp.com/mails/dieudonnenazzah",
+                { ...formState.values }
+            );
 
-			await firestore.add('/messages', formState.values);
+            await firestore.add("/messages", formState.values);
 
-			setFormState({
-				isValid: false,
-				values: {},
-				touched: {},
-				errors: {},
-			});
+            setFormState({
+                isValid: false,
+                values: {},
+                touched: {},
+                errors: {},
+            });
 
-			addToast('Message Sent. I am glad to hear from you', { appearance: 'success', autoDismiss: true });
-		} catch (error) {
-			addToast(error.message, { appearance: 'error', autoDismiss: true });
-		}
+            addToast("Message Sent. I am glad to hear from you", {
+                appearance: "success",
+                autoDismiss: true,
+            });
+        } catch (error) {
+            addToast(error.message, { appearance: "error", autoDismiss: true });
+        }
 
-		return setLoading(false);
-	};
+        return setLoading(false);
+    };
 
-	return (
-		<section className='ddnazzah-section contact-section ddnazzah-no-pb' id='contact-section'>
-			<div className='container'>
-				<div className='row justify-content-center mb-5 pb-3'>
-					<div className='col-md-7 heading-section text-center' data-aos='fade-up'>
-						<h1 className='big big-2'>Contact</h1>
-						<h2 className='mb-4'>Contact Me</h2>
-						<p>Somewhere in Accra, in the great nation of Ghana</p>
-					</div>
-				</div>
+    return (
+        <section
+            className="ddnazzah-section contact-section ddnazzah-no-pb"
+            id="contact-section"
+        >
+            <div className="container">
+                <div className="row justify-content-center mb-5 pb-3">
+                    <div
+                        className="col-md-7 heading-section text-center"
+                        data-aos="fade-up"
+                    >
+                        <h1 className="big big-2">Contact</h1>
+                        <h2 className="mb-4">Contact Me</h2>
+                        <p>Somewhere in Accra, in the great nation of Ghana</p>
+                    </div>
+                </div>
 
-				<div className='row d-flex contact-info mb-5'>
-					<div className='col-md-6 col-lg-3 d-flex' data-aos='fade-up'>
-						<div className='align-self-stretch box p-4 text-center'>
-							<div className='icon d-flex align-items-center justify-content-center'>
-								<span className='icon-map-signs'></span>
-							</div>
-							<h3 className='mb-4'>Address</h3>
-							<p>East-Legon, Accra Ghana</p>
-						</div>
-					</div>
-					<div className='col-md-6 col-lg-3 d-flex' data-aos='fade-up'>
-						<div className='align-self-stretch box p-4 text-center'>
-							<div className='icon d-flex align-items-center justify-content-center'>
-								<span className='icon-phone2'></span>
-							</div>
-							<h3 className='mb-4'>Contact Number</h3>
-							<p>
-								<a href='tel://1234567920'>+233 20 132 9311</a>
-							</p>
-						</div>
-					</div>
-					<div className='col-md-6 col-lg-3 d-flex' data-aos='fade-up'>
-						<div className='align-self-stretch box p-4 text-center'>
-							<div className='icon d-flex align-items-center justify-content-center'>
-								<span className='icon-paper-plane'></span>
-							</div>
-							<h3 className='mb-4'>Email Address</h3>
-							<p>
-								<a href='mailto:dieudonnenazzah@yahoo.co.uk'>dieudonnenazzah@yahoo.co.uk</a>
-							</p>
-						</div>
-					</div>
-					<div className='col-md-6 col-lg-3 d-flex' data-aos='fade-up'>
-						<div className='align-self-stretch box p-4 text-center'>
-							<div className='icon d-flex align-items-center justify-content-center'>
-								<span className='icon-globe'></span>
-							</div>
-							<h3 className='mb-4'>Website</h3>
-							<p>
-								<a href='https://dieudonnenazzah.com'>dieudonnenazzah.com</a>
-							</p>
-						</div>
-					</div>
-				</div>
+                <div className="row d-flex contact-info mb-5">
+                    <div
+                        className="col-md-6 col-lg-3 d-flex"
+                        data-aos="fade-up"
+                    >
+                        <div className="align-self-stretch box p-4 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="icon-map-signs"></span>
+                            </div>
+                            <h3 className="mb-4">Address</h3>
+                            <p>East-Legon, Accra Ghana</p>
+                        </div>
+                    </div>
+                    <div
+                        className="col-md-6 col-lg-3 d-flex"
+                        data-aos="fade-up"
+                    >
+                        <div className="align-self-stretch box p-4 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="icon-phone2"></span>
+                            </div>
+                            <h3 className="mb-4">Contact Number</h3>
+                            <p>
+                                <a href="tel://1234567920">+233 20 132 9311</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        className="col-md-6 col-lg-3 d-flex"
+                        data-aos="fade-up"
+                    >
+                        <div className="align-self-stretch box p-4 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="icon-paper-plane"></span>
+                            </div>
+                            <h3 className="mb-4">Email Address</h3>
+                            <p>
+                                <a href="mailto:dieudonnenazzah@yahoo.co.uk">
+                                    dieudonnenazzah@yahoo.co.uk
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        className="col-md-6 col-lg-3 d-flex"
+                        data-aos="fade-up"
+                    >
+                        <div className="align-self-stretch box p-4 text-center">
+                            <div className="icon d-flex align-items-center justify-content-center">
+                                <span className="icon-globe"></span>
+                            </div>
+                            <h3 className="mb-4">Website</h3>
+                            <p>
+                                <a href="https://dieudonnenazzah.com">
+                                    dieudonnenazzah.com
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-				<div className='row no-gutters block-9'>
+                {/* <div className='row no-gutters block-9'>
 					<div className='col-md-6 order-md-last d-flex'>
 						<form
 							className='bg-light p-4 p-md-5 pb-0 contact-form'
@@ -213,10 +240,10 @@ const Contact = () => {
 					<div className='col-md-6 d-flex'>
 						<div className='img' style={{ backgroundImage: `url(${about})` }}></div>
 					</div>
-				</div>
-			</div>
-		</section>
-	);
+				</div> */}
+            </div>
+        </section>
+    );
 };
 
 export default Contact;

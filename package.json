@@ -36,7 +36,8 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"deploy-functions": "yarn run package-functions && firebase deploy --only functions",
-		"deploy": "yarn run package-functions && yarn build && firebase deploy",
+		"deploy-all": "yarn run package-functions && yarn build && firebase deploy",
+		"deploy": "yarn build && firebase deploy",
 		"prepackage-functions": "rimraf functions",
 		"package-functions": "babel functionsES6 --out-dir functions --presets=es2015 --copy-files --ignore node_modules",
 		"postpackage-functions": "cd functions && yarn"

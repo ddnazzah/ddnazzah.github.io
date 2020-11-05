@@ -2,59 +2,79 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-07 04:02:32
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-07-18 03:54:19
+ * @Last Modified time: 2020-11-05 03:08:27
  */
 
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { isLoaded, useFirestoreConnect } from 'react-redux-firebase';
-import { Header, Loader } from '../_shared/components';
-import { About, Contact, Footer, GetInTouch, Hero, Projects, Resume, Services, Skills } from './components';
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { isLoaded, useFirestoreConnect } from "react-redux-firebase";
+import { Header, Loader } from "../_shared/components";
+import {
+    About,
+    Contact,
+    Footer,
+    GetInTouch,
+    Hero,
+    Projects,
+    Resume,
+    Skills,
+} from "./components";
 
 const Home = () => {
-	const [loading] = useState(true);
-	// useFirestoreConnect([{ collection: 'reume', orderBy: ['created_at', 'desc'], limit: 3 }]);
-	useFirestoreConnect([
-		{ collection: 'resume', orderBy: ['order', 'desc'] },
-		{ collection: 'skills' },
-		{ collection: 'projects', orderBy: ['order', 'asc'] },
-		{ collection: 'other_projects' },
-	]);
+    const [loading] = useState(true);
+    // useFirestoreConnect([{ collection: 'reume', orderBy: ['created_at', 'desc'], limit: 3 }]);
+    useFirestoreConnect([
+        { collection: "resume", orderBy: ["order", "desc"] },
+        { collection: "skills" },
+        { collection: "projects", orderBy: ["order", "asc"] },
+        { collection: "other_projects" },
+    ]);
 
-	const resume = useSelector((state) => state.firestore.ordered.resume);
-	const skills = useSelector((state) => state.firestore.ordered.skills);
-	const projects = useSelector((state) => state.firestore.ordered.projects);
-	const other_projects = useSelector((state) => state.firestore.ordered.other_projects);
+    const resume = useSelector((state) => state.firestore.ordered.resume);
+    const skills = useSelector((state) => state.firestore.ordered.skills);
+    const projects = useSelector((state) => state.firestore.ordered.projects);
+    const other_projects = useSelector(
+        (state) => state.firestore.ordered.other_projects
+    );
 
-	return !(isLoaded(resume) && isLoaded(skills) && isLoaded(projects) && isLoaded(other_projects)) ? (
-		<Loader loading={loading} fullscreen hCenter />
-	) : (
-		<React.Fragment>
-			<Header />
+    return !(
+        isLoaded(resume) &&
+        isLoaded(skills) &&
+        isLoaded(projects) &&
+        isLoaded(other_projects)
+    ) ? (
+        <Loader loading={loading} fullscreen hCenter />
+    ) : (
+        <React.Fragment>
+            <Header />
 
-			<Hero />
+            <Hero />
 
-			<About number_of_project={parseInt(projects?.length + other_projects?.length + 1)} />
+            <About
+                number_of_project={parseInt(
+                    projects?.length + other_projects?.length + 1
+                )}
+            />
 
-			<Resume data={resume} />
+            <Resume data={resume} />
 
-			<Services />
+            {/* <Services /> */}
 
-			<Skills data={skills} />
+            <Skills data={skills} />
 
-			<Projects data={projects} otherData={other_projects} />
+            <Projects data={projects} otherData={other_projects} />
 
-			{/* Blog will go here */}
+            {/* Blog will go here */}
 
-			{/* <NoPt /> */}
+            {/* <NoPt /> */}
 
-			<GetInTouch />
+            <GetInTouch />
 
-			<Contact />
+            <Contact />
 
-			<Footer />
-		</React.Fragment>
-	);
+            <Footer />
+        </React.Fragment>
+    );
 };
 
 export default Home;
