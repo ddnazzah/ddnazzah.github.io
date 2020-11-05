@@ -2,88 +2,83 @@
  * @Author: Dieu-Donne Nazzah
  * @Date: 2020-06-08 20:25:52
  * @Last Modified by: Dieu-Donne Nazzah
- * @Last Modified time: 2020-11-05 02:57:10
+ * @Last Modified time: 2020-11-05 05:12:10
  */
 
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useFirestore } from "react-redux-firebase";
-import { useToasts } from "react-toast-notifications";
-import validate from "validate.js";
-import { ContactSchema } from "../_services";
+import React from "react";
 
 const Contact = () => {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
-    const firestore = useFirestore();
-    const { addToast } = useToasts();
+    // const firestore = useFirestore();
+    // const { addToast } = useToasts();
 
-    const [formState, setFormState] = useState({
-        isValid: false,
-        values: {},
-        touched: {},
-        errors: {},
-    });
+    // const [formState, setFormState] = useState({
+    //     isValid: false,
+    //     values: {},
+    //     touched: {},
+    //     errors: {},
+    // });
 
-    useEffect(() => {
-        const errors = validate(formState.values, ContactSchema);
+    // useEffect(() => {
+    //     const errors = validate(formState.values, ContactSchema);
 
-        setFormState((formState) => ({
-            ...formState,
-            isValid: errors ? false : true,
-            errors: errors || {},
-        }));
-    }, [formState.values]);
+    //     setFormState((formState) => ({
+    //         ...formState,
+    //         isValid: errors ? false : true,
+    //         errors: errors || {},
+    //     }));
+    // }, [formState.values]);
 
-    const hasError = (field) =>
-        formState.touched[field] && formState.errors[field] ? true : false;
+    // const hasError = (field) =>
+    //     formState.touched[field] && formState.errors[field] ? true : false;
 
-    const handleChange = (event) => {
-        event.persist();
+    // const handleChange = (event) => {
+    //     event.persist();
 
-        setFormState((formState) => ({
-            ...formState,
-            values: {
-                ...formState.values,
-                [event.target.name]: event.target.value,
-            },
-            touched: {
-                ...formState.touched,
-                [event.target.name]: true,
-            },
-        }));
-    };
+    //     setFormState((formState) => ({
+    //         ...formState,
+    //         values: {
+    //             ...formState.values,
+    //             [event.target.name]: event.target.value,
+    //         },
+    //         touched: {
+    //             ...formState.touched,
+    //             [event.target.name]: true,
+    //         },
+    //     }));
+    // };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
+    // const handleFormSubmit = async (event) => {
+    //     event.preventDefault();
 
-        setLoading(true);
+    //     setLoading(true);
 
-        try {
-            await axios.post(
-                "https://ddmailer.herokuapp.com/mails/dieudonnenazzah",
-                { ...formState.values }
-            );
+    //     try {
+    //         await axios.post(
+    //             "https://ddmailer.herokuapp.com/mails/dieudonnenazzah",
+    //             { ...formState.values }
+    //         );
 
-            await firestore.add("/messages", formState.values);
+    //         await firestore.add("/messages", formState.values);
 
-            setFormState({
-                isValid: false,
-                values: {},
-                touched: {},
-                errors: {},
-            });
+    //         setFormState({
+    //             isValid: false,
+    //             values: {},
+    //             touched: {},
+    //             errors: {},
+    //         });
 
-            addToast("Message Sent. I am glad to hear from you", {
-                appearance: "success",
-                autoDismiss: true,
-            });
-        } catch (error) {
-            addToast(error.message, { appearance: "error", autoDismiss: true });
-        }
+    //         addToast("Message Sent. I am glad to hear from you", {
+    //             appearance: "success",
+    //             autoDismiss: true,
+    //         });
+    //     } catch (error) {
+    //         addToast(error.message, { appearance: "error", autoDismiss: true });
+    //     }
 
-        return setLoading(false);
-    };
+    //     return setLoading(false);
+    // };
 
     return (
         <section
