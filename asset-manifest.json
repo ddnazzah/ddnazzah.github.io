@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/ddnazzah.github.io/static/js/main.6c691f0b.chunk.js",
+    "main.js.map": "/ddnazzah.github.io/static/js/main.6c691f0b.chunk.js.map",
+    "runtime-main.js": "/ddnazzah.github.io/static/js/runtime-main.9a3c75aa.js",
+    "runtime-main.js.map": "/ddnazzah.github.io/static/js/runtime-main.9a3c75aa.js.map",
+    "static/css/2.eb43dee1.chunk.css": "/ddnazzah.github.io/static/css/2.eb43dee1.chunk.css",
+    "static/js/2.75836864.chunk.js": "/ddnazzah.github.io/static/js/2.75836864.chunk.js",
+    "static/js/2.75836864.chunk.js.map": "/ddnazzah.github.io/static/js/2.75836864.chunk.js.map",
+    "index.html": "/ddnazzah.github.io/index.html",
+    "precache-manifest.c88fe6d28cc06816822183f41007c94f.js": "/ddnazzah.github.io/precache-manifest.c88fe6d28cc06816822183f41007c94f.js",
+    "service-worker.js": "/ddnazzah.github.io/service-worker.js",
+    "static/css/2.eb43dee1.chunk.css.map": "/ddnazzah.github.io/static/css/2.eb43dee1.chunk.css.map",
+    "static/js/2.75836864.chunk.js.LICENSE.txt": "/ddnazzah.github.io/static/js/2.75836864.chunk.js.LICENSE.txt",
+    "static/media/bg_1.jpg": "/ddnazzah.github.io/static/media/bg_1.020f8848.jpg",
+    "static/media/ddnazzah.logo.png": "/ddnazzah.github.io/static/media/ddnazzah.logo.97331232.png",
+    "static/media/me_1.png": "/ddnazzah.github.io/static/media/me_1.962d004c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a3c75aa.js",
+    "static/css/2.eb43dee1.chunk.css",
+    "static/js/2.75836864.chunk.js",
+    "static/js/main.6c691f0b.chunk.js"
+  ]
+}
