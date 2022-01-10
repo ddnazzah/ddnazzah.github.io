@@ -27,7 +27,7 @@ AOS.init({
 	// Burger Menu
 	var burgerMenu = function () {
 		$('body').on('click', '.js-fh5co-nav-toggle', function (event) {
-			if ($('#ddnazzah-nav').is(':visible')) {
+			if ($('#nav').is(':visible')) {
 				$(this).removeClass('active');
 			} else {
 				$(this).addClass('active');
@@ -37,21 +37,25 @@ AOS.init({
 	burgerMenu();
 
 	var onPageClick = function () {
-		$(document).on('click', '#ddnazzah-nav a[href^="#"], a[href^="#"]', function (event) {
-			event.preventDefault();
+		$(document).on(
+			'click',
+			'#nav a[href^="#"], a[href^="#"]',
+			function (event) {
+				event.preventDefault();
 
-			var href = $.attr(this, 'href');
+				var href = $.attr(this, 'href');
 
-			$('html, body').animate(
-				{
-					scrollTop: $($.attr(this, 'href')).offset().top - 70,
-				},
-				500,
-				function () {
-					// window.location.hash = href;
-				},
-			);
-		});
+				$('html, body').animate(
+					{
+						scrollTop: $($.attr(this, 'href')).offset().top - 70,
+					},
+					500,
+					function () {
+						// window.location.hash = href;
+					},
+				);
+			},
+		);
 	};
 
 	onPageClick();
@@ -66,7 +70,10 @@ AOS.init({
 			nav: false,
 			autoplayHoverPause: false,
 			items: 1,
-			navText: ["<span class='ion-md-arrow-back'></span>", "<span class='ion-chevron-right'></span>"],
+			navText: [
+				"<span class='ion-md-arrow-back'></span>",
+				"<span class='ion-chevron-right'></span>",
+			],
 			responsive: {
 				0: {
 					items: 1,
