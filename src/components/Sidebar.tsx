@@ -14,7 +14,7 @@ export default function Sidebar() {
   const active = useActiveSection(NAV.map((n) => n.id));
 
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[46%] lg:flex-col lg:justify-between lg:py-24">
+    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
       <div>
         <h1 className="text-[clamp(2.5rem,5vw,3.25rem)] font-bold tracking-tight text-fg">
           <a href="#top" className="hover:text-accent transition-colors">

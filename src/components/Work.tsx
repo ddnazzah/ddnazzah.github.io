@@ -26,7 +26,7 @@ function FeaturedCard({ p }: { p: Project }) {
 
   return (
     <li>
-      <div className="group relative rounded-xl border border-line/60 bg-panel/30 p-6 transition-all duration-300 hover:border-accent/30 hover:bg-panel/60">
+      <div className="group relative h-full rounded-2xl border border-line/60 bg-panel/30 p-8 transition-all duration-300 hover:border-accent/30 hover:bg-panel/60">
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-lg font-semibold text-fg">
             {linkProps ? (
@@ -86,7 +86,7 @@ function ArchiveCard({ p }: { p: Project }) {
     : null;
 
   const inner = (
-    <div className="flex h-full flex-col rounded-lg border border-line/60 bg-panel/20 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-panel/50">
+    <div className="flex h-full flex-col rounded-xl border border-line/60 bg-panel/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-panel/50">
       <div className="flex items-center justify-between">
         <FolderIcon width={26} height={26} className="text-accent" />
         <div className="flex items-center gap-3 text-fg-muted">
@@ -116,7 +116,7 @@ export default function Work() {
         </p>
       </Reveal>
 
-      <ul className="grid gap-5 sm:grid-cols-2">
+      <ul className="grid gap-6 sm:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.06}>
             <FeaturedCard p={p} />
@@ -129,9 +129,9 @@ export default function Work() {
           Other Noteworthy Projects
         </h3>
       </Reveal>
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-5 sm:grid-cols-2">
         {archive.map((p, i) => (
-          <Reveal key={p.name} delay={(i % 3) * 0.05}>
+          <Reveal key={p.name} delay={(i % 2) * 0.05}>
             <ArchiveCard p={p} />
           </Reveal>
         ))}

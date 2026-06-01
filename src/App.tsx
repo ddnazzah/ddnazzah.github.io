@@ -19,10 +19,10 @@ export default function App() {
         Skip to content
       </a>
 
-      <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-12 lg:flex lg:justify-between lg:gap-12 lg:px-16">
+      <div className="mx-auto max-w-[1600px] px-6 sm:px-10 md:px-16 lg:flex lg:justify-between lg:gap-16 lg:px-20 xl:px-28">
         <Sidebar />
 
-        <main className="pt-12 lg:w-[54%] lg:py-24">
+        <main className="pt-12 lg:w-[58%] lg:py-24">
           <About />
           <Experience />
           <Work />

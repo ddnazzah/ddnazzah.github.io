@@ -20,7 +20,7 @@ export default function About() {
       <Reveal delay={0.1}>
         <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="bg-ink-2 px-5 py-6">
+            <div key={s.label} className="bg-ink-2 px-6 py-7">
               <dt className="font-mono text-2xl font-semibold text-accent sm:text-3xl">
                 {s.value}
               </dt>

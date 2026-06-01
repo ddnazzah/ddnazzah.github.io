@@ -8,7 +8,7 @@ export default function Skills() {
       <div className="grid gap-6 sm:grid-cols-2">
         {skills.map((group, i) => (
           <Reveal key={group.group} delay={(i % 2) * 0.06}>
-            <div className="rounded-xl border border-line/60 bg-panel/20 p-6">
+            <div className="h-full rounded-xl border border-line/60 bg-panel/20 p-7">
               <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-accent">
                 {group.group}
               </h3>
