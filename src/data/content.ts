@@ -54,9 +54,9 @@ export const about = {
      EdTech, real estate, logistics, and SaaS. I've delivered DevOps pipelines,
      hardened production infrastructure to 97%+ uptime, and shaped the technical
      architecture that keeps it all running.`,
-    `Earlier, I was the primary developer on <strong>Schooldesk</strong> from its
-     inception — building everything from NFC attendance and canteen POS to a PWA
-     that grew to 3,600+ monthly active users. I graduated from
+    `I'm also the primary developer on <strong>Schooldesk</strong>, which I've
+     built from its inception — everything from NFC attendance and canteen POS to
+     a PWA that's grown to 3,600+ monthly active users. I graduated from
      <a href="https://www.knust.edu.gh/">KNUST</a> with a B.Sc. in Computer
      Engineering, and I'm drawn to code optimisation, machine learning, and cloud
      infrastructure.`,
