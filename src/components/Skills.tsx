@@ -5,7 +5,7 @@ import Section from "./Section";
 export default function Skills() {
   return (
     <Section id="skills" label="Skills">
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-6">
         {skills.map((group, i) => (
           <Reveal key={group.group} delay={(i % 2) * 0.06}>
             <div className="h-full rounded-xl border border-line/60 bg-panel/20 p-7">

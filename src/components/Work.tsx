@@ -1,6 +1,6 @@
-import { projects, archive } from "../data/content";
+import { projects, archiveTable } from "../data/content";
 import type { Project } from "../data/content";
-import { ArrowUpRight, ExternalIcon, FolderIcon, GitHubIcon } from "./icons";
+import { ArrowUpRight, ExternalIcon, GitHubIcon } from "./icons";
 import Reveal from "./Reveal";
 import Section from "./Section";
 
@@ -76,35 +76,6 @@ function FeaturedCard({ p }: { p: Project }) {
   );
 }
 
-function ArchiveCard({ p }: { p: Project }) {
-  const linkProps = (p.external || p.github)
-    ? {
-        href: (p.external || p.github)!,
-        target: "_blank",
-        rel: "noopener noreferrer" as const,
-      }
-    : null;
-
-  const inner = (
-    <div className="flex h-full flex-col rounded-xl border border-line/60 bg-panel/20 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-panel/50">
-      <div className="flex items-center justify-between">
-        <FolderIcon width={26} height={26} className="text-accent" />
-        <div className="flex items-center gap-3 text-fg-muted">
-          {p.github && <GitHubIcon width={16} height={16} />}
-          {p.external && <ExternalIcon width={16} height={16} />}
-        </div>
-      </div>
-      <h3 className="mt-4 font-semibold text-fg">{p.name}</h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-fg-soft">
-        {p.description}
-      </p>
-      <p className="mt-4 font-mono text-xs text-fg-muted">{p.tech.join(" · ")}</p>
-    </div>
-  );
-
-  return <li>{linkProps ? <a {...linkProps} className="block h-full">{inner}</a> : inner}</li>;
-}
-
 export default function Work() {
   return (
     <Section id="work" label="Work">
@@ -124,18 +95,22 @@ export default function Work() {
         ))}
       </ul>
 
-      <Reveal>
-        <h3 className="mt-16 mb-6 text-sm font-bold uppercase tracking-widest text-fg">
-          Other Noteworthy Projects
-        </h3>
+      <Reveal delay={0.1}>
+        <a
+          href="/archive/"
+          className="group mt-10 inline-flex items-center font-semibold text-fg"
+        >
+          View Full Project Archive
+          <span className="ml-2 font-normal text-fg-muted">
+            ({archiveTable.length})
+          </span>
+          <ArrowUpRight
+            width={16}
+            height={16}
+            className="ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </a>
       </Reveal>
-      <ul className="grid gap-5 sm:grid-cols-2">
-        {archive.map((p, i) => (
-          <Reveal key={p.name} delay={(i % 2) * 0.05}>
-            <ArchiveCard p={p} />
-          </Reveal>
-        ))}
-      </ul>
     </Section>
   );
 }

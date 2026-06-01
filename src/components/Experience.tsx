@@ -10,7 +10,7 @@ export default function Experience() {
         {experience.map((job, i) => (
           <Reveal key={job.company} delay={i * 0.05}>
             <li className="relative">
-              <div className="group relative grid gap-3 rounded-lg p-4 transition-all sm:grid-cols-8 sm:gap-6 lg:p-5 lg:hover:bg-panel/40 lg:hover:shadow-[inset_0_1px_0_rgba(94,234,212,0.1)] lg:group-hover/list:opacity-50 lg:hover:!opacity-100">
+              <div className="group relative grid gap-3 rounded-lg p-4 transition-all sm:grid-cols-8 sm:gap-6 lg:p-5 lg:hover:bg-panel/40 lg:hover:shadow-[inset_0_1px_0_rgba(134,223,166,0.12)] lg:group-hover/list:opacity-50 lg:hover:!opacity-100">
                 <header className="z-10 mt-1 text-xs font-semibold uppercase tracking-wide text-fg-muted sm:col-span-2">
                   {job.start} — {job.end}
                 </header>

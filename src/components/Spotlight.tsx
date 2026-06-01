@@ -26,7 +26,7 @@ export default function Spotlight() {
       aria-hidden
       className="pointer-events-none fixed inset-0 z-30 transition-[background] duration-200"
       style={{
-        background: `radial-gradient(1000px circle at ${pos.x}px ${pos.y}px, rgba(94,234,212,0.09), rgba(94,234,212,0.03) 35%, transparent 65%)`,
+        background: `radial-gradient(1000px circle at ${pos.x}px ${pos.y}px, rgba(134,223,166,0.08), rgba(134,223,166,0.03) 35%, transparent 65%)`,
       }}
     />
   );

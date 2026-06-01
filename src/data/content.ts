@@ -245,102 +245,132 @@ export const projects: Project[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  Archive — compact "other noteworthy projects" grid.                */
-/*  All from real client work. Add github/external links if any go     */
-/*  public; otherwise they render as non-linked cards.                 */
+/*  Archive — the full "everything I've worked on" list, shown as a     */
+/*  table on the dedicated /archive page. Sourced from the git          */
+/*  contribution report; sub-repos consolidated into single products.   */
+/*  Add a `link` if/when a project becomes publicly viewable.           */
 /* ------------------------------------------------------------------ */
-export const archive: Project[] = [
+export type ArchiveEntry = {
+  year: string;
+  title: string;
+  madeAt: string;
+  builtWith: string[];
+  link?: string;
+};
+
+export const archiveTable: ArchiveEntry[] = [
   {
-    name: "Kargonet",
-    description:
-      "Logistics & delivery platform — a driver app, logistics app, admin dashboard, and TypeScript/SQL backend.",
-    tech: ["React Native", "TypeScript", "SQL"],
-    github: "",
-    external: "",
+    year: "2026",
+    title: "Mission1000",
+    madeAt: "BenchFive",
+    builtWith: ["React", "TypeScript"],
   },
   {
-    name: "Workspace Global",
-    description:
-      "Project-management suite built on a microservice backend with a manager-facing frontend.",
-    tech: ["TypeScript", "PHP", "React"],
-    github: "",
-    external: "",
+    year: "2026",
+    title: "Ozapp",
+    madeAt: "BenchFive",
+    builtWith: ["React Native"],
   },
   {
-    name: "Virtual Career Guide",
-    description:
-      "Career-guidance platform with an admin console, a Flutter mobile app, and a Prisma/PostgreSQL backend.",
-    tech: ["React", "Flutter", "Prisma"],
-    github: "",
-    external: "",
+    year: "2025",
+    title: "Testoria",
+    madeAt: "BenchFive",
+    builtWith: ["React", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
   },
   {
-    name: "Nextchange",
-    description:
-      "E-commerce / SaaS platform with an admin console and a TypeScript service backend.",
-    tech: ["React", "TypeScript", "SQL"],
-    github: "",
-    external: "",
+    year: "2025",
+    title: "Nextchange",
+    madeAt: "BenchFive",
+    builtWith: ["React", "TypeScript", "SQL"],
   },
   {
-    name: "ReadyDesk",
-    description:
-      "A SaaS support-desk product built on Laravel with a React frontend.",
-    tech: ["Laravel", "PHP", "React"],
-    github: "",
-    external: "",
+    year: "2025",
+    title: "Kargonet",
+    madeAt: "BenchFive",
+    builtWith: ["React Native", "TypeScript", "SQL"],
   },
   {
-    name: "Rango",
-    description:
-      "Transportation mobile app and Node.js backend for ride and trip management.",
-    tech: ["React Native", "Node.js"],
-    github: "",
-    external: "",
+    year: "2025",
+    title: "Virtual Career Guide",
+    madeAt: "BenchFive",
+    builtWith: ["React", "Flutter", "Prisma"],
   },
   {
-    name: "MyTroTro",
-    description:
-      "Backend services for a public-transport (trotro) platform connecting riders and routes.",
-    tech: ["PHP", "MySQL"],
-    github: "",
-    external: "",
+    year: "2025",
+    title: "Creative Arts Agency",
+    madeAt: "BenchFive",
+    builtWith: ["React"],
   },
   {
-    name: "Mission1000",
-    description:
-      "A social-impact web app supporting a community giving and mobilisation initiative.",
-    tech: ["React", "TypeScript"],
-    github: "",
-    external: "",
+    year: "2024",
+    title: "Workspace Global",
+    madeAt: "BenchFive",
+    builtWith: ["TypeScript", "PHP", "React"],
   },
   {
-    name: "Template8",
-    description:
-      "A website/landing-page templating tool for spinning up branded sites quickly.",
-    tech: ["Python", "HTML", "CSS"],
-    github: "",
-    external: "",
+    year: "2024",
+    title: "Diffstone Real Estate",
+    madeAt: "BenchFive",
+    builtWith: ["React", "TypeScript", "PHP", "Laravel"],
   },
   {
-    name: "Kenea",
-    description: "An e-commerce website built with a PHP and Vue stack.",
-    tech: ["PHP", "Vue"],
-    github: "",
-    external: "",
+    year: "2024",
+    title: "Template8",
+    madeAt: "BenchFive",
+    builtWith: ["Python", "HTML", "CSS"],
   },
   {
-    name: "CakeHome GH",
-    description: "An e-commerce storefront for a Ghanaian bakery brand.",
-    tech: ["PHP", "SCSS", "JavaScript"],
-    github: "",
-    external: "",
+    year: "2023",
+    title: "MyTroTro",
+    madeAt: "BenchFive",
+    builtWith: ["PHP", "MySQL"],
   },
   {
-    name: "Sunpower Innovations",
-    description: "Corporate marketing website for a solar-energy company.",
-    tech: ["Web", "JavaScript"],
-    github: "",
-    external: "",
+    year: "2023",
+    title: "ReadyDesk",
+    madeAt: "BenchFive",
+    builtWith: ["Laravel", "PHP", "React"],
+  },
+  {
+    year: "2023",
+    title: "Kenea",
+    madeAt: "BenchFive",
+    builtWith: ["PHP", "Vue"],
+  },
+  {
+    year: "2023",
+    title: "CakeHome GH",
+    madeAt: "BenchFive",
+    builtWith: ["PHP", "SCSS", "JavaScript"],
+  },
+  {
+    year: "2023",
+    title: "Sunpower Innovations",
+    madeAt: "BenchFive",
+    builtWith: ["JavaScript", "HTML"],
+  },
+  {
+    year: "2022",
+    title: "Rango",
+    madeAt: "BenchFive",
+    builtWith: ["React Native", "Node.js"],
+  },
+  {
+    year: "2022",
+    title: "Stakester — Real-time Challenges",
+    madeAt: "Stakester",
+    builtWith: ["React Native", "Firebase"],
+  },
+  {
+    year: "2021",
+    title: "Trinity",
+    madeAt: "MyShabo",
+    builtWith: ["React", "TypeScript", "Node.js"],
+  },
+  {
+    year: "2018",
+    title: "Schooldesk",
+    madeAt: "SpringKnight",
+    builtWith: ["React", "React Native", "Node.js", "PWA", "PostgreSQL"],
   },
 ];
