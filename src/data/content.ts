@@ -54,12 +54,13 @@ export const about = {
      EdTech, real estate, logistics, and SaaS. I've delivered DevOps pipelines,
      hardened production infrastructure to 97%+ uptime, and shaped the technical
      architecture that keeps it all running.`,
-    `I'm also the primary developer on <strong>Schooldesk</strong>, which I've
-     built from its inception — everything from NFC attendance and canteen POS to
-     a PWA that's grown to 3,600+ monthly active users. I graduated from
-     <a href="https://www.knust.edu.gh/">KNUST</a> with a B.Sc. in Computer
-     Engineering, and I'm drawn to code optimisation, machine learning, and cloud
-     infrastructure.`,
+    `I'm also a core engineer on <strong>Schooldesk</strong>, where I've been the
+     primary developer of the staff and guardian apps since its early days —
+     building features like NFC attendance, canteen POS, and a real-time
+     school–guardian diary, and helping grow the platform to 3,600+ monthly active
+     users. I graduated from <a href="https://www.knust.edu.gh/">KNUST</a> with a
+     B.Sc. in Computer Engineering, and I'm drawn to code optimisation, machine
+     learning, and cloud infrastructure.`,
   ],
   // Optional portrait image placed in /public. Leave "" to hide it.
   photo: "",
@@ -151,7 +152,7 @@ export const experience: Job[] = [
     start: "2023",
     end: "Present",
     points: [
-      "Primary developer on the Schooldesk platform since its 2018 inception — 1,500+ commits across 6 repos, building NFC attendance, canteen POS, transport, visitor logs, diary, classroom, and store/inventory modules.",
+      "Primary developer of the Schooldesk staff and guardian apps since 2018 — 1,500+ commits across 6 repos, building modules like NFC attendance, canteen POS, transport, visitor logs, diary, classroom, and store/inventory.",
       "Built backend API features (Node.js) and the Schooldesk PWA, growing the platform to 3,600+ monthly active users and 15,000+ push-notification subscribers.",
       "Shipped the Classroom module and a real-time diary feature for school–guardian communication.",
       "Implemented Sentry for error tracking and eliminated unnecessary re-renders, improving stability and performance across mobile, PWA, and backend.",
@@ -205,7 +206,7 @@ export const projects: Project[] = [
   {
     name: "Schooldesk",
     description:
-      "An end-to-end school management platform I've built since its inception — spanning NFC attendance, canteen POS, transport, visitor logs, a real-time school–guardian diary, classroom management, and store/inventory. Grew to 3,600+ monthly active users and 15,000+ push subscribers across native mobile apps, a PWA, and a Node.js backend.",
+      "A school management platform where I'm the primary developer of the staff and guardian apps — building NFC attendance, canteen POS, transport, visitor logs, a real-time school–guardian diary, classroom management, and store/inventory. The apps reach 3,600+ monthly active users and 15,000+ push subscribers across native mobile, a PWA, and a Node.js backend.",
     tech: ["React", "React Native", "Node.js", "PWA", "PostgreSQL", "Sentry"],
     image: "",
     github: "",
