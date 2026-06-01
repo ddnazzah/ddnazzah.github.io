@@ -7,11 +7,11 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Surfaces — neutral charcoal, near-black */
-  --color-ink: #0a0a0b;
-  --color-ink-2: #111113;
-  --color-panel: #1a1a1d;
-  --color-line: #27272a;
+  /* Surfaces — neutral charcoal */
+  --color-ink: #16161a;
+  --color-ink-2: #1d1d22;
+  --color-panel: #26262c;
+  --color-line: #34343b;
 
   /* Text */
   --color-fg: #f4f4f5;
