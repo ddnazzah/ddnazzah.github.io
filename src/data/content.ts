@@ -81,6 +81,7 @@ export const skills: { group: string; items: string[] }[] = [
       "Next.js",
       "Node.js",
       "React Native",
+      "Electron",
       "NestJS",
       "Laravel",
       "Redux",
@@ -94,6 +95,7 @@ export const skills: { group: string; items: string[] }[] = [
       "Git",
       "GitHub Actions",
       "Docker",
+      "Bun",
       "PostgreSQL",
       "GCP",
       "Digital Ocean",
@@ -152,6 +154,7 @@ export const experience: Job[] = [
     start: "2023",
     end: "Present",
     points: [
+      "Shipped FlowVoice, a cross-platform AI dictation desktop app (Electron + Bun), cutting end-to-end latency ~70% via a real-time streaming transcription pipeline.",
       "Primary developer of the Schooldesk staff and guardian apps since 2018 — 1,500+ commits across 6 repos, building modules like NFC attendance, canteen POS, transport, visitor logs, diary, classroom, and store/inventory.",
       "Built backend API features (Node.js) and the Schooldesk PWA, growing the platform to 3,600+ monthly active users and 15,000+ push-notification subscribers.",
       "Shipped the Classroom module and a real-time diary feature for school–guardian communication.",
@@ -260,6 +263,12 @@ export type ArchiveEntry = {
 };
 
 export const archiveTable: ArchiveEntry[] = [
+  {
+    year: "2026",
+    title: "FlowVoice",
+    madeAt: "SpringKnight",
+    builtWith: ["Electron", "Bun", "TypeScript", "React"],
+  },
   {
     year: "2026",
     title: "Mission1000",
