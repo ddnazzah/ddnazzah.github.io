@@ -187,9 +187,9 @@ export const education = {
 /* ------------------------------------------------------------------ */
 export const stats: { value: string; label: string }[] = [
   { value: "7+", label: "Years building" },
-  { value: "2,275+", label: "Commits shipped" },
-  { value: "30+", label: "Repositories" },
   { value: "12+", label: "Products delivered" },
+  { value: "8", label: "Engineers led" },
+  { value: "97%+", label: "Production uptime" },
 ];
 
 /* ------------------------------------------------------------------ */
