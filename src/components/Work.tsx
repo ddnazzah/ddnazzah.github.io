@@ -116,7 +116,7 @@ export default function Work() {
         </p>
       </Reveal>
 
-      <ul className="grid gap-6 sm:grid-cols-2">
+      <ul className="grid gap-6">
         {projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.06}>
             <FeaturedCard p={p} />

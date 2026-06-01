@@ -149,7 +149,7 @@ export const experience: Job[] = [
     title: "Full-Stack Engineer",
     url: "",
     start: "2023",
-    end: "2024",
+    end: "Present",
     points: [
       "Primary developer on the Schooldesk platform since its 2018 inception — 1,500+ commits across 6 repos, building NFC attendance, canteen POS, transport, visitor logs, diary, classroom, and store/inventory modules.",
       "Built backend API features (Node.js) and the Schooldesk PWA, growing the platform to 3,600+ monthly active users and 15,000+ push-notification subscribers.",
