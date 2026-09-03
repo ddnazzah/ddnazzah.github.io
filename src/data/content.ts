@@ -16,8 +16,7 @@ export const site = {
   email: "dieudonnenazzah@gmail.com",
   phone: "+233 (0) 20 132 9311",
   // Hosted resume PDF (leave "" to hide the button).
-  resumeUrl:
-    "https://drive.google.com/file/d/1wyWt80my9HUC3hsxTSSLB5FLq64Vp5Kj/view?usp=sharing",
+  resumeUrl: "/resume.pdf",
   // Short intro shown in the hero, beneath the role.
   intro:
     "I'm a full-stack engineer and CTO with 7+ years designing, building, and scaling user-centered web and mobile products — pairing deep technical work across the React and Node ecosystems with hands-on leadership of cross-functional teams.",
